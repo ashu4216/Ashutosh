@@ -1,0 +1,59 @@
+{
+	"name": "pl_copy",
+	"properties": {
+		"description": "This activity is going to copy data from azure storage to azure storage.",
+		"activities": [
+			{
+				"name": "act_copydata_practice",
+				"description": "This activity is going to copy data from source to target.",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_blob_storage",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_sink_storage",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "pl_copydata_practice"
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-02-18T08:11:13Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,9 @@
+{
+	"name": "adf-brainworks-dev",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "4e763a14-e7da-419c-9e14-d0dbe558b4d5",
+		"tenantId": "e8f39769-9de0-4446-92a6-2ffcee0d353e"
+	}
+}
